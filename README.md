@@ -8,7 +8,7 @@ To create an application using client tools, type the following command:
 
     rhc app create javabeer diy-0.1
 
-This command creates an application *javabeer* using *DIY* cartridge and clones the repository to *boot* directory.
+This command creates an application *javabeer* using *DIY* cartridge and clones the repository to *javabeer* directory.
 
 # Step 2: Add MySQL cartridge to application
 
