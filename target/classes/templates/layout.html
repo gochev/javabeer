@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<title>Java Beer</title>
+<link data-th-href="@{/css/styles.css}" href="../static/css/styles.css" rel="stylesheet" media="all" />
+<link data-th-href="@{/css/print.css}" href="../static/css/print.css" rel="stylesheet" media="print" />
+<link rel="stylesheet" type="text/css" media="all" data-th-href="@{/css/datetime/jquery.datetimepicker.css}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if lt IE 9]><script data-th-src="@{/js/vendor/html5shiv.js}" src="../static/js/vendor/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+	<div class="image-panel"></div>
+	<div layout:fragment="content">Content goes here</div>
+	<script type="text/javascript" src="../static/js/jquery-2.1.1.js" data-th-src="@{/js/jquery-2.1.1.js}"></script>
+	<script type="text/javascript" src="../static/js/init.js" data-th-src="@{/js/init.js}"></script>
+</body>
+<script type="text/javascript" data-th-src="@{/js/datetime/jquery.datetimepicker.min.js}"></script>
+	<script type="text/javascript">
+	$(function() {
+		var calendarConfig = {
+			 	format:'d-m-Y H:i'
+		 };
+		 
+	    $('#startTime').datetimepicker(calendarConfig);
+	});
+	</script>
+</html>

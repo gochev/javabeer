@@ -1,0 +1,482 @@
+/* ### CSS Reset ### */
+
+/* ### Reset ### */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary,
+main {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	line-height: 21px;
+	font-weight: 300;
+	color: #888;
+}
+
+a {
+	background: transparent;
+	text-decoration: none;
+}
+
+button,
+input {
+	line-height: normal;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+textarea:focus,
+input:focus {
+	outline: 0;
+}
+
+input {
+	margin: 0;
+	padding: 0;
+}
+
+/* ### Core variables ### */
+
+/* ### VARIABLES ###
+-----
+* Typography
+* Breakpoints
+* Paths
+* Grid setup
+* Colour palette
+* Components
+*/
+
+/* Typography */
+
+/* Breakpoints */
+
+/* ### Mixins, helpers and functions ### */
+
+/* ### Sass Mixins ### */
+
+/* ### Utility Mixins ### */
+
+/* Media queries */
+
+/* Target different screen resolutions here */
+
+/* EXAMPLE
+  @include bp(mobile) {
+    width: 100%;
+  }
+*/
+
+/**
+ * vertical-center
+ * Vertically center any element. Needs support for CSS tranforms.
+ * Usage:
+ * @include vertical-center;
+ */
+
+/**
+ * Text replacement (instead of text-indent)
+ * Usage: @include text-replacement();
+ */
+
+/* Retina Display Media Query */
+
+/* EXAMPLE
+  @include retina-display() {
+    width: 100%;
+  }
+*/
+
+/* Sass Mixin for Typekit and other webfont */
+
+/*
+Example usage:
+@include font (300, italic);
+@include font (300, normal , 2);
+*/
+
+/* Generate REMs from PX */
+
+/* EXAMPLE
+  @include rem('font-size',32px);
+*/
+
+/* ### App styles ### */
+
+.wrapper {
+	max-width: 1260px;
+	margin: 0 auto;
+}
+
+h2 {
+	font-size: 22px;
+	padding: 40px 0;
+	color: #f9a703;
+}
+
+.entry .user {
+	display: inline-block;
+	float: left;
+}
+
+.entry .user a {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.entry .user a::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+
+.entry .user a:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+
+.entry .user a p {
+	color: #888;
+}
+
+.entry .user a img {
+	border-radius: 50%;
+	max-width: 80px;
+}
+
+.entry .post {
+	z-index: 100;
+	margin-left: 25%;
+	position: relative;
+	padding: 15px;
+	color: #333;
+	background: #eee;
+	border-radius: 5px;
+	box-shadow: 4px 2px 7px 0px rgba(97, 97, 97, 0.55);
+}
+
+.entry .post h3 {
+	font-size: 20px;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+
+.entry .post .admin-buttons {
+	display: inline-block;
+	float: right;
+}
+
+.entry .post .admin-buttons a {
+	text-transform: uppercase;
+	color: #000;
+	margin-left: 10px;
+}
+
+.entry .post p {
+	margin-bottom: 10px;
+}
+
+.entry .post:after {
+	content: "";
+	position: absolute;
+	top: 19px;
+	left: -38px;
+	border-style: solid;
+	border-width: 20px 39px 20px 0;
+	border-color: transparent #EEEEEE;
+	display: block;
+	width: 0;
+	z-index: 1;
+}
+
+.image-panel {
+	width: 400px;
+	height: 100%;
+	position: fixed;
+	background-color: #f5f5f5;
+	right: 0px;
+	z-index: 200;
+	background-image: url("../static/images/duke1.jpg");
+	padding: 15px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: all 450ms;
+}
+
+.content.bootstrap {
+	margin-right: 38%;
+	margin-left: 1%;
+	width: 69%;
+}
+
+.content.bootstrap .entry {
+	margin-bottom: 40px;
+}
+
+.desktop-hide {
+	display: none !important;
+}
+
+@media (min-width: 960px) and (max-width: 1299px) {
+
+.wrapper {
+	max-width: 940px;
+}
+
+.image-panel {
+	width: 300px;
+}
+
+}
+
+@media (min-width: 960px) and (max-width: 1140px) {
+
+.content.bootstrap {
+	margin-left: 2%;
+	width: 65%;
+}
+
+}
+
+@media (min-width: 1300px) {
+
+.entry .post {
+	margin-left: 17%;
+}
+
+}
+
+@media (max-width: 959px) {
+
+.wrapper {
+	width: 100%;
+	padding: 0 25px;
+}
+
+h2 {
+	padding: 20px 0;
+}
+
+.entry .post {
+	margin-left: 0;
+}
+
+.entry .post:after {
+	content: none;
+}
+
+.entry .post h3 {
+	text-align: center;
+}
+
+.image-panel {
+	position: relative;
+	height: 240px;
+	width: 100%;
+}
+
+.content.bootstrap {
+	width: 100%;
+	margin: 0;
+}
+
+.content.bootstrap .post.simple {
+	width: 100%;
+	margin: 0;
+}
+
+.content.bootstrap .post.simple:after {
+	content: none;
+}
+
+.desktop-hide {
+	display: block !important;
+}
+
+.desktop-hide.user {
+	text-align: center;
+	float: none;
+}
+
+.desktop-hide.user a:before {
+	content: none;
+}
+
+.mobile-hide {
+	display: none !important;
+}
+
+}
+
+@-webkit-keyframes shine {
+
+100% {
+	left: 125%;
+}
+
+}
+
+@keyframes shine {
+
+100% {
+	left: 125%;
+}
+
+}
+
