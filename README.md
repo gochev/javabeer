@@ -80,4 +80,4 @@ http://blog.codeleak.pl/2014/10/spring-boot-java-8-tomcat-8-on-openshift.html
 
 Standard spring boot application with Thymeleaf 3.0 as a view engine. I also use the layout dialect, currently only one view is in use called home.html and one layout called layout.html. 
 
-The user management is still missing.
+The user management is still missing. If you want to help check the issues.
