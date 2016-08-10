@@ -14,11 +14,11 @@ This command creates an application *javabeer* using *DIY* cartridge and clones 
 
 The application we are creating will use PostgreSQL database, hence we need to add appropriate cartridge to the application:
 
-	rhc cartridge add postgresql-5.1 --app javabeer
+	rhc cartridge add mysql-5.1 --app javabeer
 
 After creating the cartridge, it is possible to check its status with the following command:
 
-    rhc cartridge status postgresql-5.1 --app javabeer
+    rhc cartridge status mysql-5.1 --app javabeer
 
 # Step 3: Delete Template Application Source code
 
