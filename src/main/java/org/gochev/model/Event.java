@@ -22,6 +22,7 @@ public class Event extends AbstractEntity {
 	@NotEmpty
 	private String title;
 	@NotEmpty
+	@Column(length=2058)
 	private String description;
 	@NotEmpty
 	private String location;

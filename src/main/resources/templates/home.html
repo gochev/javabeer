@@ -20,7 +20,7 @@
 					    	<span th:if="${#fields.hasErrors('event.title')}" th:errors="*{event.title}">Error</span> <br/>
 					    	Location:<br/><input type="text" name="location" data-th-value="${event.location}"/> <br/>
 					    	(the location should be written in a google maps frienldy way e.g. "Sredna Gora 70, Sofia, Bulgaria") <br/>
-					    	Description: <br/><textarea name="description" rows="10" cols="80" data-th-value="${event.description}"> </textarea> <br/> (Write the sponsor information inside the description for now)<br/>
+					    	Description: <br/><textarea name="description" rows="10" cols="80" data-th-value="${event.description}"> </textarea> <br/> 
 					    	(Write the sponsor information inside the description for now)<br/>
 					    	Date & Time:<br/> <input id="startTime" type="text" name="startTime" data-th-value="${#dates.format(event.startTime,'dd-MM-yyyy HH:mm')}"/> <br/>
 					    	<input type="submit" value="Save!" th:value="#{event.submit}"/>
@@ -36,7 +36,7 @@
 					</a>
 				</div>
 				<div class="post" data-th-if="${event == null or ievent.id != event.id}">
-					<h3><a href="#" data-th-text="${ievent.title}" data-th-href="@{'/event/view/'+${ievent.id}}">Post Title</a></h3>
+					<h3 data-th-text="${ievent.title}">Post Title</h3>
 					<div class="admin-buttons" data-th-if="${#authorization.expression('hasAuthority(''ORGANIZER'')')}">
 						<a href="#" data-th-href="@{'/event/edit/'+${ievent.id}}">edit</a> <a href="#" data-th-href="@{'/event/delete/'+${ievent.id}}">delete</a>
 					</div>
@@ -55,6 +55,9 @@
 						
 						<div data-th-if="${page.totalElements == 1}" style="text-decoration:none; overflow:hidden; height:500px; width:5000px; max-width:100%;"><div id="my-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Sofia,+България&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" data-th-src="@{'https://www.google.com/maps/embed/v1/place?q='+${ievent.location}+'&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU'}"></iframe></div><a class="google-maps-html" href="http://www.dog-checks.com" id="authorize-maps-data">dog checks</a><style>#my-map-display img{max-width:none!important;background:none!important;font-size: inherit;}</style></div><script src="https://www.dog-checks.com/google-maps-authorization.js?id=4cde2364-9fa0-917f-b90c-9f51b72c4d13&c=google-maps-html&u=1470837693" defer="defer" async="async"></script>
 
+					</div>
+					<div class="admin-buttons" data-th-if="${page.totalElements > 1}">
+						<a href="#" data-th-href="@{'/event/view/'+${ievent.id}}">More Details</a>
 					</div>
 					<div class="admin-buttons" data-th-if="${page.totalElements == 1}">
 						<a href="javascript:var%20d=document,f='http://www.facebook.com/share',l=d.location,e=encodeURIComponent,p='.php?src=bm&v=4&i=1273839345&u='+e(l.href)+'&t='+e(d.title);1;try{if%20(!/^(.*\.)?facebook\.[^.]*$/.test(l.host))throw(0);share_internal_bookmarklet(p)}catch(z)%20{a=function()%20{if%20(!window.open(f+'r'+p,'sharer','toolbar=0,status=0,resizable=1,width=626,height=436'))l.href=f+p};if%20(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else{a()}}void(0)" >share on facebook</a>
