@@ -28,12 +28,11 @@ public class JavabeerApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(JavabeerApplication.class, args);
 	
 //		PasswordEncoder passwordEncoder = context.getBean(PasswordEncoder.class);
-		UserRepository userRepo = context.getBean(UserRepository.class);
-		User user = new User();
-		user.setUsername("gochev@gmail.com");
+//		UserRepository userRepo = context.getBean(UserRepository.class);
+//		User user = new User();
+//		user.setUsername("gochev@gmail.com");
 //		user.setPassword(passwordEncoder.encode("test"));
-		user.setPassword("$2a$10$qu5o.SuF8BBb5rG8/3A5je8qnhikFuS1ZCxhYCVn33MTbQ4AI/5wi");
-		userRepo.save(user);
+//		userRepo.save(user);
 //		
 //		EventRepository eventRepository = context.getBean(EventRepository.class);
 //		
