@@ -1,13 +1,10 @@
 package org.gochev;
 
-import org.gochev.model.User;
-import org.gochev.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
@@ -21,12 +18,11 @@ public class JavabeerApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(JavabeerApplication.class, args);
 	
 //		PasswordEncoder passwordEncoder = context.getBean(PasswordEncoder.class);
-		UserRepository userRepo = context.getBean(UserRepository.class);
-		User user = new User();
-		user.setUsername("gochev@gmail.com");
-//		user.setPassword(passwordEncoder.encode("test"));
-		user.setPassword("$2a$10$qu5o.SuF8BBb5rG8/3A5je8qnhikFuS1ZCxhYCVn33MTbQ4AI/5wi");
-		userRepo.save(user);
+//		UserRepository userRepo = context.getBean(UserRepository.class);
+//		User user = new User();
+//		user.setUsername("test");
+////		user.setPassword(passwordEncoder.encode("test"));
+//		userRepo.save(user);
 //		
 //		EventRepository eventRepository = context.getBean(EventRepository.class);
 //		
