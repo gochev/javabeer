@@ -20,9 +20,9 @@
 					    	<span th:if="${#fields.hasErrors('event.title')}" th:errors="*{event.title}">Error</span> <br/>
 					    	Location:<br/><input type="text" name="location" data-th-value="${event.location}"/> <br/>
 					    	(the location should be written in a google maps frienldy way e.g. "Sredna Gora 70, Sofia, Bulgaria") <br/>
-					    	Description: <br/><textarea name="description" rows="10" cols="80" data-th-value="${event.description}"> </textarea> <br/> 
+					    	Description: <br/><textarea name="description" rows="10" cols="80" data-th-text="${event.description}"> </textarea> <br/> 
 					    	(Write the sponsor information inside the description for now)<br/>
-					    	Date & Time:<br/> <input id="startTime" type="text" name="startTime" data-th-value="${#dates.format(event.startTime,'dd-MM-yyyy HH:mm')}"/> <br/>
+					    	Date &amp; Time:<br/> <input id="startTime" type="text" name="startTime" data-th-value="${#dates.format(event.startTime,'dd-MM-yyyy HH:mm')}"/> <br/>
 					    	<input type="submit" value="Save!" th:value="#{event.submit}"/>
 				    	</fieldset>
 				    </form>
@@ -49,7 +49,7 @@
 					<div class="post-content">
 						<p><span class="label">Where:</span> <span data-th-text="${ievent.location}">Sofia Bulgaria.</span></p>
 						<p><span class="label">When:</span> <span data-th-text="${#dates.format(ievent.startTime,'dd MMMM yyyy ''@'' HH:mm')}">17:55 on 01 June 2016</span></p>
-						<p><span class="label">Description:</span> <span data-th-text="${ievent.description}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia repellat, vitae id sit! Iste, nesciunt
+						<p><span class="label">Description:</span> <span data-th-utext="${ievent.description}"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia repellat, vitae id sit! Iste, nesciunt
 							voluptates architecto aperiam laborum, inventore dolorem reiciendis. Ab ullam repellendus, labore, exercitationem
 							fugiat velit ducimus.</span></p>
 						
@@ -76,9 +76,9 @@
 					    	<span th:if="${#fields.hasErrors('event.title')}" th:errors="*{event.title}">Error</span> <br/>
 					    	New Location:<br/><input type="text" name="location" data-th-value="${event.location}"/> <br/>
 					    	(the location should be written in a google maps frienldy way e.g. "Sredna Gora 70, Sofia, Bulgaria") <br/>
-					    	New Description: <br/><textarea name="description" rows="10" cols="80" data-th-value="${event.description}"> </textarea> <br/> 
+					    	New Description: <br/><textarea name="description" rows="10" cols="80" data-th-text="${event.description}"> </textarea> <br/> 
 					    	(Write the sponsor information inside the description for now)<br/>
-					    	New Date & Time:<br/> <input id="startTime" type="text" name="startTime" data-th-value="${#dates.format(event.startTime,'dd-MM-yyyy HH:mm')}"/> <br/>
+					    	New Date &amp; Time:<br/> <input id="startTime" type="text" name="startTime" data-th-value="${#dates.format(event.startTime,'dd-MM-yyyy HH:mm')}"/> <br/>
 					    	<input type="submit" value="Save!" th:value="#{event.submit}"/>
 				    	</fieldset>
 				    </form>
