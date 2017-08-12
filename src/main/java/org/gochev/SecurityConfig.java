@@ -78,14 +78,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.POST, "/talks/**").hasAuthority("SPEAKER") // #6
                 .antMatchers("/event/**", "/talks/**").hasAuthority("ORGANIZER") // #6
 //                .antMatchers("/user/**").hasAuthority("USER") //will contain schedule and etc
-                .anyRequest().authenticated() // 7
+                //.anyRequest().authenticated() // 7
         		.and()
-        		.httpBasic();
-        	
-//                .and()
-//                .formLogin()  // #8
-//                .loginPage("/login") // #9
-//                .permitAll(); // #5
+        		.httpBasic()
+        		.and()
+                .formLogin()  // #8
+                .loginPage("/login") // #9
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll(); // #5
     }
     
 //    @Bean
