@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<script>
+	var password = document.getElementById("password"), confirmPassword = document
+			.getElementById("confirmPassword");
+
+	function validatePassword() {
+		if (password.value != confirmPassword.value) {
+			document.getElementById("errorMessage").innerHTML = "Passwords Don't Match";
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="content bootstrap" layout:fragment="content">
+		<div class="wrapper">
+			<h2></h2>
+			<form th:action="@{/registration/save}" name="user" method="post">
+				<table>
+					<tr>
+						<td><label>Username: </label></td>
+						<td><input type="text" name="username" /></td>
+					</tr>
+					<tr>
+						<td><label>Password: </label></td>
+						<td><input type="password" name="password" /></td>
+					</tr>
+					<tr>
+						<td><label>Confirm Password: </label></td>
+						<td><input type="password" name="confirmPassword" /></td>
+					</tr>
+					<tr>
+						<td><label>e-mail: </label></td>
+						<td><input type="text" name="email" /></td>
+					</tr>
+					<tr>
+						<td><label>First Name: </label></td>
+						<td><input type="text" name="firstname" /></td>
+					</tr>
+					<tr>
+						<td><label>Last Name: </label></td>
+						<td><input type="text" name="lastname" /></td>
+					</tr>
+					<tr>
+						<td><label>Upload picture: </label></td>
+						<td><input type="file" name="pic" accept="image/*"> <input
+							type="submit"></td>
+					</tr>
+				</table>
+				<br>
+				<div class="admin-buttons">
+					<input type="submit" th:value="#{registration.submit}"
+						onclick="validatePassword()" />
+				</div>
+				<p id="errorMessage"></p>
+			</form>
+		</div>
+	</div>
+</body>
