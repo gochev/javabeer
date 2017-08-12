@@ -4,6 +4,12 @@
 <body>
 	<div class="content bootstrap" layout:fragment="content">
 		<div class="wrapper">
+			<div style="text-align: right">
+				<h4>
+					<a href="#" data-th-href="@{'/login/'}" style="color: #f9a703;">Login</a>
+					<br> <a href="#" data-th-href="@{/registration/}" style="color: #f9a703;">Registration</a>
+				</h4>
+			</div>
 			<h2><a href="#" data-th-href="@{/}" style="color: #f9a703;">Java Beer Events</a> <a data-th-if="${#authorization.expression('hasAuthority(''ORGANIZER'')')}" href="#" data-th-href="@{'/event/new/'}">(Add New Event)</a></h2>
 			<div class="entry" data-th-if="${isNew}">
 				<div class="user mobile-hide">

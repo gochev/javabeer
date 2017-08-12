@@ -8,9 +8,11 @@
      	<div data-th-text="${event.location}">Event Location</div>
      	<div data-th-text="${#dates.format(event.startTime,'HH:mm ''on'' dd MMMM yyyy')}">Event StartTime</div>
      	<div data-th-text="${event.description}">Event Description</div>
-     	<div th:if="${#authorization.expression('hasAuthority(''ORGANIZER'')')}">
+     	<!-- <div th:if="${#authorization.expression('hasAuthority(''ORGANIZER'')')}"> -->
      		<span><a href="edit.html" data-th-href="@{'/event/edit/'+${event.id}}">edit</a></span>
      		<span><a href="home.html" data-th-href="@{'/event/delete/'+${event.id}}">delete</a></span>
-     	</div>
+     		<span><a href="login.html">login</a></span>
+     		<span><a href="registration.html">registration</a></span>
+     	<!-- </div> -->
      </div>
 </body>
